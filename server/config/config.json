@@ -1,0 +1,4 @@
+{
+    "TOKEN_SECRET":"SecretString",
+    "DB_URL":"mongodb://localhost:27017/foodApplication?readPreference=primary"
+}
