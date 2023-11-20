@@ -1,4 +1,4 @@
 {
     "TOKEN_SECRET":"SecretString",
-    "DB_URL":"mongodb://localhost:27017/foodApplication?readPreference=primary"
+    "DB_URL":"mongodb+srv://chowdrysai45:sai12345@cluster0.hzmdjns.mongodb.net/?retryWrites=true&w=majority"
 }
