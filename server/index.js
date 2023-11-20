@@ -18,8 +18,10 @@ dotenv.config();
 //CONNECTION TO DATABASE
 mongoose.connect(
   DB_URL,
-  { useNewUrlParser: true,
-    useUnifiedTopology: true },
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
   () => {
     console.log("connected to db ")
     app.listen(PORT, () => console.log(`server up and running at  ${PORT}`));
@@ -28,7 +30,12 @@ mongoose.connect(
 
 //MIDDLEWARE -> DISALBING CORS AND USED FOR JSON OUTPUT
 app.use(express.json(), cors());
-
+app.use(cors({
+  origin: "*",
+}))
+app.get('/',(req, res) => {
+  res.json("hello")
+})
 //ROUTE MIDDLEWARE
 app.use("/auth", authRoute);
 app.use("/items", itemRoute);
