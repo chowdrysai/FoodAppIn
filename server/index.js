@@ -29,7 +29,7 @@ mongoose.connect(
 );
 
 //MIDDLEWARE -> DISALBING CORS AND USED FOR JSON OUTPUT
-app.use(express.json(), cors());
+app.use(express.json());
 app.use(cors({
   origin: "http:///deploy-mern-1whq.vercel.app",
   methods: ['POST', 'GET', 'DELETE', 'PUT', 'PATCH'],
