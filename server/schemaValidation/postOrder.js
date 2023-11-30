@@ -1,4 +1,4 @@
-const Joi = require("@hapi/joi");
+const Joi = require('@hapi/joi');
 
 const postOrderSchema = Joi.array().items({
     itemUuid: Joi.string().required(),

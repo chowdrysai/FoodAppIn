@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { domain } from './../config';
-import { useSelector } from "react-redux";
-import { defaultOptions } from "../utils/helpers";
+import { useSelector } from 'react-redux';
+import { defaultOptions } from '../utils/helpers';
 
 const ProfilerScreen = (props) => {
     const [orders, setOrders] = useState('');
@@ -13,15 +13,15 @@ const ProfilerScreen = (props) => {
         async function fetchMyAPI() {
 
             const headers = defaultOptions(currentUser.token);
-            const response = await axios.get(`${domain}/orders/all`, headers)
-            console.log(response)
+            const response = await axios.get(`${domain}/orders/all`, headers);
+            console.log(response);
             if (response.status === 200) {
                 setOrders(response.data.orders);
             }
         }
         
         fetchMyAPI();
-    }, [])
+    }, []);
 
 
 
@@ -29,17 +29,17 @@ const ProfilerScreen = (props) => {
         try {
             if (id) {
                 const headers = defaultOptions(currentUser.token);
-                const mail =currentUser.email
-                console.log(mail)
+                const mail =currentUser.email;
+                console.log(mail);
                 if(headers){
-                    const resp = await axios.delete(`${domain}/auth/delete`, mail)
+                    const resp = await axios.delete(`${domain}/auth/delete`, mail);
                     if (resp.status === 200) {
                         logoutHandler();
                     }
                 } 
             }
         } catch (err) {
-            alert("Failed to Delete! Please try again after some time.")
+            alert('Failed to Delete! Please try again after some time.');
         }
     }
 
@@ -47,13 +47,13 @@ const ProfilerScreen = (props) => {
     const logoutHandler = () => {
         // localStorage.removeItem("currentUser");
         // window.location.href = '/'
-    }
+    };
 
 
     // const inProgressCount = orders.filter(item => item.status === 'in-progress');
     // const deliveredCount = orders.filter(item => item.status !== 'in-progress')
     return (
-        <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+        <section className="vh-100" style={{ backgroundColor: '#eee' }}>
             <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-md-12 col-xl-4">
@@ -76,7 +76,7 @@ const ProfilerScreen = (props) => {
                                         role="button"
                                         data-mdb-ripple-color="dark"
                                     ><i className="fa fa-facebook-f"></i
-                                    ></a>
+                                        ></a>
 
                                     <a
                                         className="btn btn-link btn-floating btn-lg text-dark m-1"
@@ -84,7 +84,7 @@ const ProfilerScreen = (props) => {
                                         role="button"
                                         data-mdb-ripple-color="dark"
                                     ><i className="fa fa-twitter"></i
-                                    ></a>
+                                        ></a>
 
                                     <a
                                         className="btn btn-link btn-floating btn-lg text-dark m-1"
@@ -92,7 +92,7 @@ const ProfilerScreen = (props) => {
                                         role="button"
                                         data-mdb-ripple-color="dark"
                                     ><i className="fa fa-instagram"></i
-                                    ></a>
+                                        ></a>
                                 </div>
                                 <button
                                     type="button"
@@ -121,6 +121,6 @@ const ProfilerScreen = (props) => {
                 </div>
             </div>
         </section >
-    )
-}
+    );
+};
 export default ProfilerScreen;

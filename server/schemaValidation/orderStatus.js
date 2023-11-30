@@ -1,4 +1,4 @@
-const Joi = require("@hapi/joi");
+const Joi = require('@hapi/joi');
 
 const statusSchema = Joi.object({
     uuid: Joi.array().items(Joi.string()).required(),

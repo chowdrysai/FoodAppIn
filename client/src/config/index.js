@@ -1,3 +1,3 @@
 module.exports = {
-    "domain":"http://localhost:4050"
-}
+    'domain':'http://localhost:4050'
+};

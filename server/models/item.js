@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const foodSchema = new mongoose.Schema({
     uuid: {type: String, required: true},
@@ -13,4 +13,4 @@ const foodSchema = new mongoose.Schema({
     price: { type: Number ,required:true}
 });
 foodSchema.set('timestamps', true);
-module.exports = mongoose.model("items", foodSchema);
+module.exports = mongoose.model('items', foodSchema);

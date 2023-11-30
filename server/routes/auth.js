@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const { loginSchema } = require('./../schemaValidation/login');
 const { registerSchema } = require('./../schemaValidation/signup');
 const { deleteUser } = require('./../schemaValidation/delete');

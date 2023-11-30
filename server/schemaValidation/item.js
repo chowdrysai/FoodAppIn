@@ -1,4 +1,4 @@
-const Joi = require("@hapi/joi");
+const Joi = require('@hapi/joi');
 
 const itemSchema = Joi.object({
     name : Joi.string().required(),

@@ -1,4 +1,4 @@
-const router = require("express").Router();
+const router = require('express').Router();
 const { validate } = require('../middleware/validatonHandle');
 const { verifyAuth, isAdmin } = require('./../middleware/verifyAuth');
 const { postOrderSchema } = require('./../schemaValidation/postOrder');
